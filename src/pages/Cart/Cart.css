@@ -14,13 +14,13 @@
   100% { transform: scale(1);}
 }
 
-/* ----- Section Animations ------ */
+
 .cart {
   margin-top: 100px;
   animation: cartSectionFade 1.1s cubic-bezier(.48,1.24,.36,1.19) both;
 }
 
-/* ----- Cart Items ----- */
+
 .cart-items-title {
   display: grid;
   grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
@@ -58,7 +58,7 @@
   border: none;
 }
 
-/* ----- Remove Button ----- */
+
 .cart-items-item .cross {
   cursor: pointer;
   font-size: 22px;
@@ -74,7 +74,6 @@
   text-shadow: 0 1.5px 8px #ff634755;
 }
 
-/* ----- Cart Bottom, Totals, and Button ----- */
 .cart-bottom {
   margin-top: 80px;
   display: flex;

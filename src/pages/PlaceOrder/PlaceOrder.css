@@ -80,7 +80,7 @@
   flex: 1 1 47%;
 }
 
-/* Right Side (Cart Totals & Button) */
+
 .place-order-right {
   width: 100%;
   max-width: max(40%, 500px);
@@ -142,7 +142,7 @@
   border-top: 1.2px solid #ffece6;
 }
 
-/* Responsive */
+
 @media (max-width: 950px) {
   .place-order {
     gap: 18px;
