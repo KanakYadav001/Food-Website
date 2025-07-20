@@ -1,34 +1,35 @@
 import React from 'react'
 import './Footer.css'
 import { assets } from '../../assets/assets'
+
 const Footer = () => {
   return (
-    <div className='footer' id='footer'>
+    <div className='footer' id='footer' data-aos="fade-up">
       <div className="footer-content">
         <div className="footer-content-left">
-            <img src={assets.logo} alt="" />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto eaque quod dolore qui, ducimus, earum nostrum dolorum maxime omnis assumenda eveniet laborum vitae voluptatem aspernatur maiores eius nemo ullam accusantium!</p>
-            <div className="footer-social-icons">
-                <img src={assets.facebook_icon} alt="" />
-                <img src={assets.twitter_icon} alt="" />
-                <img src={assets.linkedin_icon} alt="" />
-            </div>
+          <img src={assets.logo} alt="" />
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto eaque quod dolore qui, ducimus, earum nostrum dolorum maxime omnis assumenda eveniet laborum vitae voluptatem aspernatur maiores eius nemo ullam accusantium!</p>
+          <div className="footer-social-icons">
+            <img src={assets.facebook_icon} alt="" />
+            <img src={assets.twitter_icon} alt="" />
+            <img src={assets.linkedin_icon} alt="" />
+          </div>
         </div>
         <div className="footer-content-center">
-            <h2>COMPANY</h2>
-            <ul>
-                <li>Home</li>
-                <li>About us</li>
-                <li>Delivery</li>
-                <li>Privacy policy</li>
-            </ul>
+          <h2>COMPANY</h2>
+          <ul>
+            <li>Home</li>
+            <li>About us</li>
+            <li>Delivery</li>
+            <li>Privacy policy</li>
+          </ul>
         </div>
         <div className="footer-content-right">
-           <h2>GET IN TOUCH</h2>
-           <ul>
+          <h2>GET IN TOUCH</h2>
+          <ul>
             <li>+91890-098-0770</li>
             <li>contact@tamato.com</li>
-           </ul>
+          </ul>
         </div>
       </div>
       <hr />
