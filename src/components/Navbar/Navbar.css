@@ -103,7 +103,7 @@
 }
 
 @media (max-width:900px) {
-  .navbar .logo { width: 120px; }
+  .navbar .logo { width: 70px; }
   .navbar-menu { gap: 15px; font-size: 16px; }
   .navbar-right { gap: 20px; }
   .navbar-right img { width: 20px; }

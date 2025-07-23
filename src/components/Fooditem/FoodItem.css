@@ -1,41 +1,52 @@
+/* Card entrance animation */
 @keyframes cardEntrance {
   0% {
     opacity: 0;
-    transform: translateY(60px) scale(0.94) skewY(1.5deg);
-    filter: blur(2.3px);
+    transform: translateY(54px) scale(0.93);
+    filter: blur(7px);
   }
-  75% {
-    opacity: .85;
-    transform: translateY(-7px) scale(1.01) skewY(-0.7deg);
-    filter: blur(0.7px);
+  80% {
+    opacity: 0.86;
+    transform: translateY(-8px) scale(1.04);
+    filter: blur(1px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1) skewY(0deg);
-    filter: blur(0px);
+    transform: translateY(0) scale(1);
+    filter: none;
   }
+}
+@keyframes badgePulse {
+  0%, 100% { transform: translate(-50%,-50%) scale(0.8); opacity: .7;}
+  65%     { transform: translate(-50%,-50%) scale(1.17); opacity: 0.2;}
+}
+@keyframes iconPop {
+  0%   { transform: scale(.68) rotate(-15deg); }
+  55%  { transform: scale(1.18) rotate(9deg);}
+  100% { transform: scale(1) rotate(0);}
 }
 
 .food-item {
   width: 100%;
   margin: auto;
-  border-radius: 21px;
-  border: 1.7px solid rgba(200,200,220,0.12);
-  background: linear-gradient(122deg, #ffeecf 0%, #ffd1e3 94%);
-  box-shadow: 0 3px 24px 0 #fd668726, 0 2px 16px -4px #9f94ed19;
-  transition:
-    box-shadow 0.55s cubic-bezier(.65,1.35,.36,1.09),
-    transform 0.58s cubic-bezier(.62,1.15,.36,1.09),
-    background 0.30s;
-  animation: cardEntrance 1.08s cubic-bezier(.43,1.11,.36,1.2) forwards;
+  border-radius: 18px;
+  border: 1.9px solid rgba(255,99,71,0.08);
+  background: linear-gradient(122deg, #fffaf6 60%, #ffeadd 100%);
+  box-shadow: 0 6px 32px 0 #ff634729, 0 2px 14px 0 #ffb79531;
   overflow: hidden;
   position: relative;
+  animation: cardEntrance .8s cubic-bezier(.45,1.37,.35,1.03) forwards;  /* <--- FIXED */
+  opacity: 1;  /* <--- FIXED for reload bug */
+  transition:
+    box-shadow 0.42s cubic-bezier(.46,1.38,.32,1.08),
+    transform 0.50s cubic-bezier(.51,1.13,.36,1.10),
+    background 0.28s;
 }
 
 .food-item:hover {
-  box-shadow: 0 7px 38px -12px #fd6687cc, 0 4px 32px -6px #caa8ff33;
-  background: linear-gradient(115deg, #ffe6c5 14%, #faf9fa 80%);
-  transform: scale(1.025) rotate(-1.1deg) skewY(-0.5deg);
+  box-shadow: 0 14px 50px -12px #ff634782, 0 8px 20px -12px #ffa36642;
+  background: linear-gradient(118deg, #fff3eb 9%, #fff9f6 100%);
+  transform: scale(1.027) ;
 }
 
 .food-item-img-container {
@@ -43,72 +54,75 @@
   overflow: hidden;
 }
 
+/* Food image animation */
 .food-item-image {
   width: 100%;
-  border-radius: 19px 19px 0 0;
-  transition: transform 0.53s cubic-bezier(.44,1.7,.33,1);
+  aspect-ratio: 1.6/1;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+  transition: transform 0.56s cubic-bezier(.41,1.6,.33,1.13), box-shadow 0.29s;
+  box-shadow: 0 2.5px 14px -5px #ffb79521;
 }
-
 .food-item:hover .food-item-image {
-  transform: scale(1.085) translateY(-6px) rotate(-2deg);
+  transform: scale(1.1) translateY(-8px) ;
+  box-shadow: 0 7px 34px -10px #ff63476f;
 }
 
 .food-item-info {
-  padding: 22px 25px 16px 25px;
+  padding: 24px 22px 17px 22px;
 }
 
 .food-item-name-rating {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 .food-item-name-rating p {
   font-size: 22px;
   font-weight: 700;
-  letter-spacing: .7px;
-  color: #1b1a26;
+  letter-spacing: .8px;
+  color: #222920;
 }
 .food-item-name-rating img {
-  width: 73px;
+  width: 72px;
+  filter: saturate(1.08) drop-shadow(0 1.5px 2px #fff2e77a);
 }
 .food-item-desc {
-  color: #7f607e;
-  font-size: 15px;
+  color: #c28b67;
+  font-size: 14.5px;
   margin-bottom: 5px;
   line-height: 1.48;
 }
 .food-item-price {
-  color: tomato;
-  font-size: 25px;
+  color: #ff6347;
+  font-size: 24px;
   font-weight: 800;
-  margin: 12px 0px 0 0;
+  margin: 13px 0px 0 0;
 }
 
-/* Add to cart button unique badge and ripple */
+/* Add to cart button */
 .food-item-img-container .add {
   width: 38px;
   position: absolute;
-  bottom: 16px;
-  right: 14px;
+  bottom: 15px;
+  right: 15px;
+  z-index: 2;
   cursor: pointer;
   border-radius: 50%;
-  background: linear-gradient(145deg, #fd6687 35%, #fff 140%);
-  box-shadow: 0 6px 20px -8px #fd668777;
-  filter: drop-shadow(0 5px 10px #fd668744);
+  background: linear-gradient(#ff6a4d 70%, #fff6f6 200%);
+  box-shadow: 0 6px 18px -8px #ff63477a;
   transition:
-    box-shadow 0.53s cubic-bezier(.45,1.35,.63,1.11),
-    transform 0.46s cubic-bezier(.57,1.46,.53,1.03),
-    background 0.36s;
+    box-shadow 0.31s cubic-bezier(.48,1.44,.39,1.07),
+    transform 0.33s cubic-bezier(.56,1.54,.44,1.01),
+    background 0.28s;
+  animation: iconPop 0.52s cubic-bezier(.52,1.43,.48,1.01) backwards;
 }
-
 .food-item-img-container .add:hover {
-  background: linear-gradient(111deg, #fff 20%, #d8b0e1 95%);
-  box-shadow: 0 16px 38px -10px #fd668777, 0 2px 12px #d8b0e155;
-  transform: scale(1.1) rotate(-14deg);
+  background: linear-gradient(120deg, #fff4f1 58%, #ff6a4d 110%);
+  box-shadow: 0 16px 38px -4px #ff634741;
+  transform: scale(1.12) rotate(-13deg);
 }
-
-/* New: subtle animated badge (like pulse) */
 .food-item-img-container .add::after {
   content: "";
   position: absolute;
@@ -116,67 +130,60 @@
   width: 45px; height: 45px;
   pointer-events: none;
   border-radius: 50%;
-  background: radial-gradient(circle, #fd668745 0%, transparent 70%);
+  background: radial-gradient(circle, #ff634735 0%, transparent 73%);
   transform: translate(-50%,-50%) scale(0);
-  animation: badgePulse 1.8s infinite cubic-bezier(.42,1.73,.34,.98);
+  animation: badgePulse 1.5s infinite cubic-bezier(.42,1.73,.34,.98);
 }
 
-@keyframes badgePulse {
-  0%, 100% { transform: translate(-50%,-50%) scale(0.8); opacity: .8;}
-  65%     { transform: translate(-50%,-50%) scale(1.2); opacity: 0.3;}
-}
-
-/* Counter area with modern treatment */
+/* Counter styling */
 .food-item-counter {
   position: absolute;
-  bottom: 15px;
-  right: 15px;
+  bottom: 13px;
+  right: 13px;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 9px 15px 9px 9px;
+  padding: 8px 14px 8px 8px;
   border-radius: 44px;
-  background: rgba(255,255,255,0.93);
-  box-shadow: 0 8px 22px -9px #fd6687aa;
-  backdrop-filter: blur(7px);
-  animation: badgePulse 0.9s;
+  background: rgba(255,255,255,0.97);
+  box-shadow: 0 7px 25px -9px #ff634759;
+  backdrop-filter: blur(5px);
+  animation: iconPop 0.45s cubic-bezier(.54,1.2,.56,1.07);
 }
 
+
 .food-item-counter img {
-  width: 30px;
+  width: 28px;
   cursor: pointer;
-  background: #fff;
+  background: #fffdfa;
   border-radius: 50%;
   transition: 
-    transform 0.39s cubic-bezier(.45,1.55,.63,1),
+    transform 0.45s cubic-bezier(.45,1.55,.63,1),
     box-shadow 0.33s cubic-bezier(.45,1.55,.63,1);
 }
 .food-item-counter img:hover {
-  transform: scale(1.17) rotate(-9deg);
-  box-shadow: 0 2px 14px -8px #fd6687;
+  transform: scale(1.21) ;
+  box-shadow: 0 1.5px 10px -5px #ff6347ad;
 }
 
-@media (max-width: 900px) {
-  .food-item-info {
-    padding: 15px;
-  }
-  .food-item-name-rating img {
-    width: 58px;
-  }
-  .food-item-desc {
-    font-size: 13.5px;
-  }
-  .food-item-price {
-    font-size: 20px;
-  }
+/* Responsive styles */
+@media (max-width: 1100px) {
+  .food-item-info { padding: 21px 13px 13px 13px; }
+  .food-item-name-rating img { width: 58px; }
+  .food-item-price { font-size: 19px; }
 }
-@media (max-width: 750px) {
+@media (max-width: 850px) {
+  .food-item-info { padding: 16px 7px 9px 7px; }
+  .food-item-name-rating p { font-size: 15.5px; }
+}
+@media (max-width: 650px) {
   .food-item {
-    border-radius: 14px;
+    border-radius: 11px;
   }
-  .food-item-info { padding: 9px; }
-  .food-item-name-rating p { font-size: 16px; }
+  .food-item-info { padding: 9px 4.4vw 8px 4vw; }
+  .food-item-name-rating p { font-size: 13.5px; }
   .food-item-desc { font-size: 10.7px; }
-  .food-item-price { font-size: 15px; }
-  .food-item-img-container .add { width: 28px; }
+  .food-item-price { font-size: 13.6px; }
+  .food-item-img-container .add { width: 23px;}
+  .food-item-counter img { width: 16px;}
 }

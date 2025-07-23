@@ -8,7 +8,9 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-content-left">
           <img className='flogo' src={assets.logo} alt="" />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto eaque quod dolore qui, ducimus, earum nostrum dolorum maxime omnis assumenda eveniet laborum vitae voluptatem aspernatur maiores eius nemo ullam accusantium!</p>
+          <p>Welcome to Half Fried – where hunger meets a little chaos and a lot of flavor.
+
+We’re not your average food delivery service. We believe food should be fun, fast, and sometimes... just Half Fried 😎. Born from midnight cravings and random thoughts like “What if fries had feelings?” — our goal is simple</p>
           <div className="footer-social-icons">
             <img src={assets.facebook_icon} alt="" />
             <img src={assets.twitter_icon} alt="" />

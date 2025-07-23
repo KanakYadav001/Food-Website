@@ -1,4 +1,4 @@
-/* Background fade-in (no scaling, no resizing) */
+
 @keyframes headerBgFade {
   from {
     filter: brightness(0.97) blur(0.7px);
@@ -8,7 +8,7 @@
   }
 }
 
-/* Header content entrance: slide up + fade in */
+
 @keyframes headerSlideFade {
   0% {
     opacity: 0;
@@ -24,7 +24,7 @@
   }
 }
 
-/* Button modern bounce-in effect */
+
 @keyframes buttonBounceIn {
   0% {
     opacity: 0;
