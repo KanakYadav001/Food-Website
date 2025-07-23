@@ -7,7 +7,7 @@ const Footer = () => {
     <div className='footer' id='footer' data-aos="fade-up">
       <div className="footer-content">
         <div className="footer-content-left">
-          <img src={assets.logo} alt="" />
+          <img className='flogo' src={assets.logo} alt="" />
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto eaque quod dolore qui, ducimus, earum nostrum dolorum maxime omnis assumenda eveniet laborum vitae voluptatem aspernatur maiores eius nemo ullam accusantium!</p>
           <div className="footer-social-icons">
             <img src={assets.facebook_icon} alt="" />
@@ -27,8 +27,8 @@ const Footer = () => {
         <div className="footer-content-right">
           <h2>GET IN TOUCH</h2>
           <ul>
-            <li>+91890-098-0770</li>
-            <li>contact@tamato.com</li>
+            <li>+91702-432-6355</li>
+            <li>contact@HalfFried.com</li>
           </ul>
         </div>
       </div>
